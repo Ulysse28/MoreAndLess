@@ -14,7 +14,6 @@
 int main()
 {
     printf("Jeu code en langage C par Ulysse Valdenaire \n");
-
     printf("Bienvenue dans ce jeu, le but est de deviner un nombre \n");
 
     //Secret Number
@@ -36,8 +35,6 @@ int main()
     //Main loop of the game
     while(running)
     {
-
-
         //Game mode (1 or 2 players)
         printf("Voulez vous jouez a 1 ou 2 joueurs ? (1)/(2)  ");
         scanf("%d", &modeJoueur);
@@ -70,7 +67,7 @@ int main()
             scanf("%d", &nombreMystere);
         }
 
-        //Loop^game
+        //Game loop
         do
         {
             //The player choose a number
