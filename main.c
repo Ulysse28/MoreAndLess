@@ -1,6 +1,8 @@
-/*  Little Game in C langage
-    31/08/2021
+/*  Little Game in C langage where the player has to guess a number
+    Single player or multiplayer
+
     By Ulysse Valdenaire
+    31/08/2021
 */
 
 #include <stdio.h>
@@ -30,6 +32,8 @@ int main()
     //Main loop of the game
     while(running)
     {
+
+
         //Game mode (1 or 2 players)
         printf("Voulez vous jouez a 1 ou 2 joueurs ? (1)/(2)  ");
         scanf("%d", &modeJoueur);
