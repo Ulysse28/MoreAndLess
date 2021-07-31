@@ -1,36 +1,43 @@
+/*  Little Game in C langage
+    31/08/2021
+    By Ulysse Valdenaire
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+
+//Main Function
 int main()
 {
-    //Nombre mystère
+    //Secret Number
     int nombreMystere;
-    //mode de jeu
+    //Game mode
     int modeJoueur;
-    //niveau de jeu
+    //Game level
     int level;
-    //Variables pour générer un nombre aléatoire
+    //Random number
     int max;
     const MIN = 1;
-    //Réponse du joueur initialiser à 0
+    //Player answer
     int rep = 0;
     //Compteur
     int compteur = 0;
-    //Pour continuer ou pas la partie
+    //To continue the game
     int running = 1;
 
-    //Boucle principale du jeu
+    //Main loop of the game
     while(running)
     {
-        //Mode de jeeux (2 joueurs ou 1 joueur)
-        printf("Voulez vous jouez à 1 ou 2 joueurs ? (1)/(2)  ");
+        //Game mode (1 or 2 players)
+        printf("Voulez vous jouez a 1 ou 2 joueurs ? (1)/(2)  ");
         scanf("%d", &modeJoueur);
-        //Selon la réponse
+        //According to the answer
         if(modeJoueur == 1)
         {
-            //L'utilisateur choisi le niveau de diificulté
-            printf("choisissez le niveau de difficulte : 1/2/3 : \n");
+            //The player choose the difficulty level
+            printf("Choisissez le niveau de difficulte : 1/2/3 : \n");
             scanf("%d", &level);
 
             switch(level){
@@ -45,24 +52,24 @@ int main()
                 break;
             }
 
-            //Générer un nombre aléatoire entre 0 et 100
+            //Generate a random number between 0 and and max
             srand(time(NULL));
             nombreMystere = (rand() % (max - MIN + 1)) + MIN;
         }
         else
         {
-            printf("Entrez le nombre à faire deviner : ");
+            printf("Entrez le nombre a faire deviner : ");
             scanf("%d", &nombreMystere);
         }
 
-        //Boucle de partie
+        //Loop^game
         do
         {
-            //L'utilisateur entre un nombre entre 0 et 100
+            //The player choose a number
             printf("Entrez un nombre entre 0 et %d  ", max);
             scanf("%d", &rep);
 
-            //Tests sur la réponse du joueur
+            //Tests on the player's answer
             if(nombreMystere > rep)
             {
                 printf("C'est plus grand !");
@@ -70,7 +77,7 @@ int main()
             }
             else if(nombreMystere < rep)
             {
-                printf("c'est plus petit !");
+                printf("C'est plus petit !");
                 compteur++;
             }
             else
@@ -81,12 +88,12 @@ int main()
         }
         while (rep != nombreMystere);
 
-        //si le il veut rejouer
-        printf("Vouslez vous refaire une partie ? yes(1)/no(0) ");
+        //If the player want to play again
+        printf("Voulez vous refaire une partie ? yes(1)/no(0) ");
         scanf("%d", &running);
     }
 
-    //Si le joueur arrete la partie
-    printf("au revoir !");
+    //If the player wants to stop the game
+    printf("Au revoir !");
     return 0;
 }
