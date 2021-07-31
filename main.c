@@ -13,9 +13,9 @@
 //Main Function
 int main()
 {
-    printf("Jeu code en langage C par Ulysse Valdenaire");
+    printf("Jeu code en langage C par Ulysse Valdenaire \n");
 
-    printf("Bienvenue dans ce jeu, le but est de deviner un nombre");
+    printf("Bienvenue dans ce jeu, le but est de deviner un nombre \n");
 
     //Secret Number
     int nombreMystere;
