@@ -1,3 +1,6 @@
+
+Console Game in C !
+
 This is my first program with C langage.
 
 You can play alone (with the computer) or with a friend.
